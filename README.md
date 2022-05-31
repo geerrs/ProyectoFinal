@@ -6,4 +6,11 @@ con sus modelos, vistas, urls y templates, al igual que el CRUD de los modelos.
 
 Gerson Sanchez:
 Se encargo de realizar la parte de autenticacion (login, logout y register), la edicion de los usuarios incluyendo el avatar, y los
-buscadores de datos de cada modelo, y la pagina de "About"y los botones que no tenian nada asignado. 
+buscadores de datos de cada modelo, y la pagina de "About"y los botones que no tenian nada asignado.
+
+admin:
+
+user: pepito
+contraseña: mondongo
+
+video:https://youtu.be/e1WeV0TYFaI
