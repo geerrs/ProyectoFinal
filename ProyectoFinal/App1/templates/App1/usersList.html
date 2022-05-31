@@ -1,0 +1,39 @@
+{% extends "App1/inicio.html" %}
+
+{% load static %}
+
+{% block Content_2 %}
+<h3>Search your friends:</h3>
+    <ul>
+        <form action="/App1/searchUsers/" method="GET"> 
+
+            <input type="text" name="name">
+            <input type="submit" value="Search">
+
+        </form>
+    </ul>
+    
+
+    <ul> 
+
+        {% for users in object_list %} 
+
+        <li>
+
+            <p>Name: {{users.name}}</p>
+
+            <p>
+                <a href="{% url 'DetailUsers' users.id %}">View</a>
+                <a href="{% url 'EditUsers' users.id %}">Edit</a>
+                <a href="{% url 'DeleteUsers' users.id %}">Delete</a>
+            </p>
+
+        </li>
+
+        {% endfor %}
+
+    </ul>
+
+    <a href="{% url 'NewUsers' %}">Create</a>
+
+{% endblock %}

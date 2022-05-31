@@ -1,0 +1,44 @@
+{% extends "App1/inicio.html" %}
+
+{% load static %}
+
+{% block Content_2 %}
+    <h3>Search your creators:</h3>
+    <ul>
+        <form action="/App1/searchCreators/" method="GET"> 
+
+        <input type="text" name="username">
+        <input type="submit" value="Search">
+
+        </form>
+    </ul>
+    
+
+    <ul> 
+
+        {% for creators in object_list %} 
+
+        <li>
+
+            <p>Name: {{creators.username}}</p>
+
+            <p>
+                <button><a href="{% url 'DetailCreators' creators.id %}">View</a></button>
+                <button><a href="{% url 'EditCreators' creators.id %}">Edit</a></button>
+                <button><a href="{% url 'DeleteCreators' creators.id %}">Delete</a></button>
+            </p>
+
+        </li>
+
+        {% endfor %}
+
+    </ul>
+
+    <h3>Join our creator community:</h3>
+    <ul>
+
+        <button><a href="{% url 'NewCreators' %}">Let's go</a></button>
+    </ul>    
+
+
+{% endblock %}

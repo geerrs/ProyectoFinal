@@ -1,0 +1,47 @@
+{% extends "App1/inicio.html" %}
+
+{% load static %}
+
+{% block Content_2 %}
+    <h3>Search your favourites games:</h3>
+    <ul>
+        <form action="/App1/search/" method="GET"> 
+
+            <input type="text" name="name">
+            <input type="submit" value="Search">
+
+        </form>
+    </ul>
+    <ul> 
+
+        {% for games in object_list %} 
+
+        <li>
+
+            <p>Name: {{games.name}}</p>
+
+            <p>
+                <button><a href="{% url 'DetailGames' games.id %}">View</a></button>
+                <button><a href="{% url 'EditGames' games.id %}">Edit</a></button>
+                <button><a href="{% url 'DeleteGames' games.id %}">Delete</a></button>
+
+            </p>
+
+        </li>
+
+        {% endfor %}
+
+    </ul>
+
+    <h3>Don't found your game? Add yours:</h3>
+
+    <ul>
+        <button>
+            <a href="{% url 'NewGames' %}">Add</a>
+        
+        </button>
+        
+    </ul>
+
+
+{% endblock %}

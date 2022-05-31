@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Information</title>
+</head>
+<body>
+    <p>Name: <i>{{ games.name }} </i></p>
+    <p>Developer: <i>{{ games.developer }}</i></p>
+    <p>Popularity: <i>{{ games.popularity }} </i></p>
+    <p>Type: <i>{{ games.type }} </i></p>
+    <p>
+        <a href="{% url 'ListGames' %}">Go Back</a>
+    </p>
+</body>
+</html>
